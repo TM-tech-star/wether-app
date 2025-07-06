@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>天気予報アプリ</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>天気予報</h1>
+            <div class="search-container">
+                <input type="text" id="citySearch" placeholder="都市名を入力...">
+                <button id="searchBtn">検索</button>
+            </div>
+        </header>
+        
+        <main>
+            <div class="loading" id="loading">読み込み中...</div>
+            <div class="error" id="error"></div>
+            
+            <div class="current-weather" id="currentWeather">
+                <h2 id="cityName"></h2>
+                <div class="weather-icon">
+                    <img id="weatherIcon" src="" alt="">
+                </div>
+                <div class="temperature" id="temperature"></div>
+                <div class="description" id="description"></div>
+                <div class="details">
+                    <div class="detail-item">
+                        <span class="label">体感温度</span>
+                        <span id="feelsLike"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">湿度</span>
+                        <span id="humidity"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">風速</span>
+                        <span id="windSpeed"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="advice-section" id="adviceSection">
+                <h3>アドバイス</h3>
+                <div class="advice-container">
+                    <div class="advice-item">
+                        <span class="advice-icon">☂️</span>
+                        <div class="advice-content">
+                            <h4>傘の必要性</h4>
+                            <p id="umbrellaAdvice"></p>
+                        </div>
+                    </div>
+                    <div class="advice-item">
+                        <span class="advice-icon">👕</span>
+                        <div class="advice-content">
+                            <h4>服装アドバイス</h4>
+                            <p id="clothingAdvice"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="forecast" id="forecast">
+                <h3>5日間の予報</h3>
+                <div class="forecast-container" id="forecastContainer"></div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>
